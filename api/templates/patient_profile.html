@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Patient Profile</h2>
+<p>Name: {{ patient.user.username }}</p>
+<p>Age: {{ patient.age }}</p>
+<p>Gender: {{ patient.gender }}</p>
+<p>Phone: {{ patient.phone }}</p>
+<p>Email: {{ patient.email }}</p>
+<p>Doctor: {{ patient.doctor.user.username }}</p>
+<p>Medical History: {{ patient.medical_history }}</p>
+{% endblock %}

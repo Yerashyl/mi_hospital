@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Appointments</h2>
+<ul>
+    {% for appointment in appointments %}
+        <li>{{ appointment.date_time }} - {{ appointment.doctor.user.username }} with {{ appointment.patient.user.username }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Medical Records</h2>
+<ul>
+    {% for record in medical_records %}
+        <li>{{ record.date_created }} - Diagnosis: {{ record.diagnosis }}, Prescription: {{ record.prescription }} (by Dr. {{ record.doctor.user.username }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
